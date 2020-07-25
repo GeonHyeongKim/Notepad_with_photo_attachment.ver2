@@ -17,7 +17,7 @@ class Note {
         self.insertDate = Date()
     }
     
-    static var dummyNote = [
+    static var dummyNoteList = [
         Note(content: "Feedback content"),
         Note(content: "TODO")
     ]
