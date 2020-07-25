@@ -11,6 +11,7 @@ import UIKit
 class ComposeViewController: UIViewController {
     
     var editTarget: Note?
+    var originalMemoContent: String?
     
     @IBOutlet weak var txtMemo: UITextView!
     
@@ -20,10 +21,21 @@ class ComposeViewController: UIViewController {
         if let memo = editTarget {
             navigationItem.title = "메모 편집"
             txtMemo.text = memo.content
+            originalMemoContent = memo.content
         } else {
             navigationItem.title = "새 메모"
             txtMemo.text = ""
         }
+        
+        txtMemo.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.presentationController?.delegate = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.presentationController?.delegate = nil
     }
     
     @IBAction func close(_ sender: Any) {
@@ -65,7 +77,41 @@ class ComposeViewController: UIViewController {
 
 }
 
-//MARK:- 새 메모가 발생시 List update
+//MARK: - UITextViewDelegate
+extension ComposeViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if let origin = originalMemoContent, let edited = textView.text {
+            if #available(iOS 13.0, *) {
+                isModalInPresentation = origin != edited
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+}
+
+//MARL: = UIAdaptivePresentationControllerDelegate
+extension ComposeViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+        let alert = UIAlertController(title: "알림", message: "편집한 내용을 저장할까요?", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] (action) in
+            self?.save(action)
+        }
+        
+        alert.addAction(okAction)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel) { [weak self] (action) in
+            self?.close(action)
+        }
+        
+        alert.addAction(cancleAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+//MARK: - 새 메모가 발생시 List update
 extension ComposeViewController {
     static let newMomoDidInsert = Notification.Name(rawValue: "newMomoDidInsert")
     static let memoDidChange = Notification.Name(rawValue: "momoDidChange")
