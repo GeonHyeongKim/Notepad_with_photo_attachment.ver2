@@ -29,6 +29,7 @@ class ComposeViewController: UIViewController {
         }
         
         // 메모가 입력되었을 경우
+        DataManager.shard.addNewMemo(memo)
 //        let newMemo = Note(content: memo)
 //        Note.dummyNoteList.append(newMemo)
         
