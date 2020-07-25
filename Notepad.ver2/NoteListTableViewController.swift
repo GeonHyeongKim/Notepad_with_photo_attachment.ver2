@@ -17,14 +17,31 @@ class NoteListTableViewController: UITableViewController {
         return format
     }()
     
+    var token: NSObjectProtocol? // 메모리 낭비를 줄임
+    
+    deinit { // 소멸자에서 해제
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Observers
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.newMomoDidInsert, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            self?.tableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        tableView.reloadData()
     }
 
     // MARK: - Table view data source

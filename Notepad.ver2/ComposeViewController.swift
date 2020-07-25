@@ -13,7 +13,7 @@ class ComposeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                    
         // Do any additional setup after loading the view.
     }
     
@@ -31,6 +31,9 @@ class ComposeViewController: UIViewController {
         // 메모가 입력되었을 경우
         let newMemo = Note(content: memo)
         Note.dummyNoteList.append(newMemo)
+        
+        NotificationCenter.default.post(name: ComposeViewController.newMomoDidInsert, object: nil)
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -44,4 +47,9 @@ class ComposeViewController: UIViewController {
     }
     */
 
+}
+
+//MARK:- 새 메모가 발생시 List update
+extension ComposeViewController {
+    static let newMomoDidInsert = Notification.Name(rawValue: "newMomoDidInsert")
 }
