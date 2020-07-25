@@ -36,6 +36,7 @@
 		570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		570FCDC224CC60AA00E30B2F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		570FCDC524CC89EA00E30B2F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		570FCDC724CCB6A600E30B2F /* Notepad.ver2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notepad.ver2.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		570FCD9C24CC07E800E30B2F /* Notepad.ver2 */ = {
 			isa = PBXGroup;
 			children = (
+				570FCDC724CCB6A600E30B2F /* Notepad.ver2.entitlements */,
 				570FCDC424CC89C400E30B2F /* Data */,
 				570FCDBF24CC2F2300E30B2F /* Extension */,
 				570FCDB624CC182100E30B2F /* Model */,
@@ -332,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Notepad.ver2/Notepad.ver2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SF6SBNPMLX;
 				INFOPLIST_FILE = Notepad.ver2/Info.plist;
@@ -342,6 +345,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "geonhyeong.Notepad-ver2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -351,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Notepad.ver2/Notepad.ver2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SF6SBNPMLX;
 				INFOPLIST_FILE = Notepad.ver2/Info.plist;
@@ -361,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "geonhyeong.Notepad-ver2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
