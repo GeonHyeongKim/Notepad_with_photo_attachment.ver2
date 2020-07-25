@@ -9,12 +9,21 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
+    
+    var editTarget: Note?
+    
     @IBOutlet weak var txtMemo: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
                     
-        // Do any additional setup after loading the view.
+        if let memo = editTarget {
+            navigationItem.title = "메모 편집"
+            txtMemo.text = memo.content
+        } else {
+            navigationItem.title = "새 메모"
+            txtMemo.text = ""
+        }
     }
     
     @IBAction func close(_ sender: Any) {
@@ -29,11 +38,17 @@ class ComposeViewController: UIViewController {
         }
         
         // 메모가 입력되었을 경우
-        DataManager.shard.addNewMemo(memo)
+        if let tartget = editTarget { // 편집
+            tartget.content = memo
+            DataManager.shard.saveContext()
+            NotificationCenter.default.post(name: ComposeViewController.memoDidChange, object: nil)
+        } else { // 새 메모
+            DataManager.shard.addNewMemo(memo)
+            NotificationCenter.default.post(name: ComposeViewController.newMomoDidInsert, object: nil)
+        }
 //        let newMemo = Note(content: memo)
 //        Note.dummyNoteList.append(newMemo)
         
-        NotificationCenter.default.post(name: ComposeViewController.newMomoDidInsert, object: nil)
         
         dismiss(animated: true, completion: nil)
     }
@@ -53,4 +68,5 @@ class ComposeViewController: UIViewController {
 //MARK:- 새 메모가 발생시 List update
 extension ComposeViewController {
     static let newMomoDidInsert = Notification.Name(rawValue: "newMomoDidInsert")
+    static let memoDidChange = Notification.Name(rawValue: "momoDidChange")
 }

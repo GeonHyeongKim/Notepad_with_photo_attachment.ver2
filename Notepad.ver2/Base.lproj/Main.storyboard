@@ -116,7 +116,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-hn-PEY">
                                 <rect key="frame" x="-8" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Item" id="dEe-Lf-5Nl"/>
+                                    <barButtonItem systemItem="compose" id="dEe-Lf-5Nl">
+                                        <connections>
+                                            <segue destination="RkQ-vk-WOi" kind="presentation" id="eYP-Rc-dTI"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -133,6 +137,9 @@
                         <viewLayoutGuide key="safeArea" id="jQh-5L-hS7"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="n5l-le-ua2"/>
+                    <connections>
+                        <outlet property="tvMemo" destination="A8o-VU-8g6" id="d9Z-mw-HwH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twc-Ls-CPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENo-tJ-OGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2454" y="-443"/>
+            <point key="canvasLocation" x="3096" y="-443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7se-nD-xSa">
@@ -216,9 +223,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzW-CI-lGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="-442"/>
+            <point key="canvasLocation" x="2352" y="-443"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eYP-Rc-dTI"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>

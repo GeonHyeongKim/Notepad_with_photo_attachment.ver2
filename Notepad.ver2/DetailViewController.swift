@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
     
     var memo: Note?
     
+    @IBOutlet weak var tvMemo: UITableView!
+    
     let formatter: DateFormatter = { // Closures를 활용
         let format = DateFormatter()
         format.dateStyle = .long
@@ -19,11 +21,28 @@ class DetailViewController: UIViewController {
         format.locale = Locale(identifier: "Ko_kr") // 한글표시
         return format
     }()
+    
+    var token: NSObjectProtocol?
+    
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            self?.tvMemo.reloadData()
+        })
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? ComposeViewController {
+            vc.editTarget = memo
+        }
     }
     
 
