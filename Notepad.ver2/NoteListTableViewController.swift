@@ -9,7 +9,14 @@
 import UIKit
 
 class NoteListTableViewController: UITableViewController {
-
+    let formatter: DateFormatter = { // Closures를 활용
+        let format = DateFormatter()
+        format.dateStyle = .long
+        format.timeStyle = .short
+        format.locale = Locale(identifier: "Ko_kr") // 한글표시
+        return format
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +45,7 @@ class NoteListTableViewController: UITableViewController {
         // Configure the cell...
         let target = Note.dummyNoteList[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = target.insertDate.description
+        cell.detailTextLabel?.text = formatter.string(from: target.insertDate)
         
         return cell
     }
