@@ -9,7 +9,8 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
-
+    @IBOutlet weak var txtMemo: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +18,19 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        guard let memo = txtMemo.text,
+            memo.count > 0 else {  // 메모가 입력되지 않았을 경우
+            alert(message: "메모를 입력해주세요")
+            return
+        }
+        
+        // 메모가 입력되었을 경우
+        let newMemo = Note(content: memo)
+        Note.dummyNoteList.append(newMemo)
         dismiss(animated: true, completion: nil)
     }
     
