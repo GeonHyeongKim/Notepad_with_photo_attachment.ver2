@@ -43,6 +43,15 @@ class NoteListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
 //        tableView.reloadData()
     }
+    
+    // data 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            if let vc = segue.destination as? DetailViewController {
+                vc.memo = Note.dummyNoteList[indexPath.row]
+            }
+        }
+    }
 
     // MARK: - Table view data source
 

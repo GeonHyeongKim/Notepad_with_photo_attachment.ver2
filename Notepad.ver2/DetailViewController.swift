@@ -9,6 +9,16 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var memo: Note?
+    
+    let formatter: DateFormatter = { // Closures를 활용
+        let format = DateFormatter()
+        format.dateStyle = .long
+        format.timeStyle = .short
+        format.locale = Locale(identifier: "Ko_kr") // 한글표시
+        return format
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +48,13 @@ extension DetailViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailMemoTableViewCell", for: indexPath)
+            cell.textLabel?.text = memo?.content
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailDateTableViewCell", for: indexPath)
+            cell.textLabel?.text = formatter.string(from: memo?.insertDate ?? Date())
+
             return cell
         default:
             fatalError()
