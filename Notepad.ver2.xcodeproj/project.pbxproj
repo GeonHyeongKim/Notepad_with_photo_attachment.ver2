@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		570FCD9E24CC07E800E30B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCD9D24CC07E800E30B2F /* AppDelegate.swift */; };
 		570FCDA024CC07E800E30B2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */; };
-		570FCDA224CC07E800E30B2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDA124CC07E800E30B2F /* ViewController.swift */; };
 		570FCDA524CC07E800E30B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDA324CC07E800E30B2F /* Main.storyboard */; };
 		570FCDA824CC07E800E30B2F /* Notepad_ver2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDA624CC07E800E30B2F /* Notepad_ver2.xcdatamodeld */; };
 		570FCDAA24CC07E900E30B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDA924CC07E900E30B2F /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		570FCD9A24CC07E800E30B2F /* Notepad.ver2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notepad.ver2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570FCD9D24CC07E800E30B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		570FCDA124CC07E800E30B2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		570FCDA424CC07E800E30B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		570FCDA724CC07E800E30B2F /* Notepad_ver2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notepad_ver2.xcdatamodel; sourceTree = "<group>"; };
 		570FCDA924CC07E900E30B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			children = (
 				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
 				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
-				570FCDA124CC07E800E30B2F /* ViewController.swift */,
 				570FCDA324CC07E800E30B2F /* Main.storyboard */,
 				570FCDA924CC07E900E30B2F /* Assets.xcassets */,
 				570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */,
@@ -141,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570FCDA224CC07E800E30B2F /* ViewController.swift in Sources */,
 				570FCD9E24CC07E800E30B2F /* AppDelegate.swift in Sources */,
 				570FCDA824CC07E800E30B2F /* Notepad_ver2.xcdatamodeld in Sources */,
 				570FCDA024CC07E800E30B2F /* SceneDelegate.swift in Sources */,
