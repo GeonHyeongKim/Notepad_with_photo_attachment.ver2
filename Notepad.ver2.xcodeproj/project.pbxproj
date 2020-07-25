@@ -15,6 +15,7 @@
 		570FCDAD24CC07E900E30B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */; };
 		570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDB724CC1ADA00E30B2F /* Model.swift */; };
 		570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */; };
+		570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		570FCDAE24CC07E900E30B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570FCDB724CC1ADA00E30B2F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewController.swift; sourceTree = "<group>"; };
+		570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +66,10 @@
 				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
 				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
 				570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */,
+				570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */,
 				570FCDA324CC07E800E30B2F /* Main.storyboard */,
-				570FCDA924CC07E900E30B2F /* Assets.xcassets */,
 				570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */,
+				570FCDA924CC07E900E30B2F /* Assets.xcassets */,
 				570FCDAE24CC07E900E30B2F /* Info.plist */,
 				570FCDA624CC07E800E30B2F /* Notepad_ver2.xcdatamodeld */,
 			);
@@ -155,6 +158,7 @@
 				570FCD9E24CC07E800E30B2F /* AppDelegate.swift in Sources */,
 				570FCDA824CC07E800E30B2F /* Notepad_ver2.xcdatamodeld in Sources */,
 				570FCDA024CC07E800E30B2F /* SceneDelegate.swift in Sources */,
+				570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */,
 				570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */,
 				570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */,
 			);
