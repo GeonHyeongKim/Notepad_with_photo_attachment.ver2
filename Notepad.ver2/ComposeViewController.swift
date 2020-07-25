@@ -52,10 +52,10 @@ class ComposeViewController: UIViewController {
         // 메모가 입력되었을 경우
         if let tartget = editTarget { // 편집
             tartget.content = memo
-            DataManager.shard.saveContext()
+            DataManager.shared.saveContext()
             NotificationCenter.default.post(name: ComposeViewController.memoDidChange, object: nil)
         } else { // 새 메모
-            DataManager.shard.addNewMemo(memo)
+            DataManager.shared.addNewMemo(memo)
             NotificationCenter.default.post(name: ComposeViewController.newMomoDidInsert, object: nil)
         }
 //        let newMemo = Note(content: memo)

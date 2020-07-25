@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class DataManager {
-    static let shard = DataManager()
+    static let shared = DataManager()
     private init() {
         
         
@@ -47,6 +47,13 @@ class DataManager {
         noteList.insert(newMemo, at: 0) // 가장 처음에 입력
         
         saveContext()
+    }
+    
+    func deleteMemo(_ memo: Note?) {
+        if let memo = memo {
+            mainContext.delete(memo)
+            saveContext()
+        }
     }
     
     // MARK: - Core Data stack

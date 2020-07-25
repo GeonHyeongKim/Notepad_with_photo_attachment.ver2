@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
             NotificationCenter.default.removeObserver(token)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +43,22 @@ class DetailViewController: UIViewController {
         if let vc = segue.destination.children.first as? ComposeViewController {
             vc.editTarget = memo
         }
+    }
+    
+    @IBAction func deleteMemo(_ sender: Any) {
+        let alert = UIAlertController(title: "알림", message: "삭제 확인", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
+            DataManager.shared.deleteMemo(self?.memo)
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(okAction)
+        
+        let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancleAction)
+        present(alert, animated: true, completion: nil)
+
     }
     
 
