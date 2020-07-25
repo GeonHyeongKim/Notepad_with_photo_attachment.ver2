@@ -51,7 +51,7 @@ class DetailViewController: UIViewController {
         let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
             DataManager.shared.deleteMemo(self?.memo)
             self?.navigationController?.popViewController(animated: true)
-        }
+        } 
         
         alert.addAction(okAction)
         

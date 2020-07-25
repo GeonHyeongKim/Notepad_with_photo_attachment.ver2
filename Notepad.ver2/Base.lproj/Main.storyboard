@@ -197,7 +197,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="txtMemo" destination="2te-vJ-xhm" id="HV9-pr-hKi"/>
+                        <outlet property="tvMemo" destination="2te-vJ-xhm" id="HV9-pr-hKi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENo-tJ-OGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

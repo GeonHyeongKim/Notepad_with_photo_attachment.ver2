@@ -13,28 +13,67 @@ class ComposeViewController: UIViewController {
     var editTarget: Note?
     var originalMemoContent: String?
     
-    @IBOutlet weak var txtMemo: UITextView!
+    @IBOutlet weak var tvMemo: UITextView!
     
+    var willShowToken: NSObjectProtocol?
+    var willHideToken: NSObjectProtocol?
+    
+    deinit {
+        if let token = willShowToken {
+            NotificationCenter.default.removeObserver(token)
+        }
+        
+        if let token = willHideToken {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
                     
         if let memo = editTarget {
             navigationItem.title = "메모 편집"
-            txtMemo.text = memo.content
+            tvMemo.text = memo.content
             originalMemoContent = memo.content
         } else {
             navigationItem.title = "새 메모"
-            txtMemo.text = ""
+            tvMemo.text = ""
         }
         
-        txtMemo.delegate = self
+        tvMemo.delegate = self
+        
+        // 키보드 노티피케이션
+        willShowToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            guard let strongSelf = self else { return }
+            
+            if let frame = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let hight = frame.cgRectValue.height
+                
+                var inset = strongSelf.tvMemo.contentInset
+                inset.bottom = hight
+                strongSelf.tvMemo.contentInset = inset
+            }
+        })
+        
+        willHideToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
+            guard let strongSelf = self else { return }
+            
+            var inset = strongSelf.tvMemo.contentInset
+            inset.bottom = 0
+            
+            inset = strongSelf.tvMemo.scrollIndicatorInsets
+            inset.bottom = 0
+            strongSelf.tvMemo.scrollIndicatorInsets = inset
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tvMemo.becomeFirstResponder()
         navigationController?.presentationController?.delegate = self
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        tvMemo.resignFirstResponder()
         navigationController?.presentationController?.delegate = nil
     }
     
@@ -43,7 +82,7 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        guard let memo = txtMemo.text,
+        guard let memo = tvMemo.text,
             memo.count > 0 else {  // 메모가 입력되지 않았을 경우
             alert(message: "메모를 입력해주세요")
             return
