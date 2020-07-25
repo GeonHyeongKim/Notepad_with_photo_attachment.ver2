@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="eSu-ed-L1B" kind="show" trigger="accessoryAction" id="GmI-UJ-PwS"/>
+                                    <segue destination="eSu-ed-L1B" kind="show" id="fIh-vz-AMY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -111,7 +111,6 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="eSu-ed-L1B" id="T0k-mb-q4Z"/>
-                                    <outlet property="delegate" destination="eSu-ed-L1B" id="FWc-Jr-GET"/>
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-hn-PEY">
