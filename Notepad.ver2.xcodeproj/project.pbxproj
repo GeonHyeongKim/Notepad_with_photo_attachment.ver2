@@ -17,6 +17,7 @@
 		570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */; };
 		570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */; };
 		570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */; };
+		570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC224CC60AA00E30B2F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewController.swift; sourceTree = "<group>"; };
 		570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		570FCDC224CC60AA00E30B2F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
 				570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */,
 				570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */,
+				570FCDC224CC60AA00E30B2F /* DetailViewController.swift */,
 				570FCDA324CC07E800E30B2F /* Main.storyboard */,
 				570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */,
 				570FCDA924CC07E900E30B2F /* Assets.xcassets */,
@@ -173,6 +176,7 @@
 				570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */,
 				570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */,
 				570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */,
+				570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
