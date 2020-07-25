@@ -16,6 +16,7 @@
 		570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDB724CC1ADA00E30B2F /* Model.swift */; };
 		570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */; };
 		570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */; };
+		570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		570FCDB724CC1ADA00E30B2F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewController.swift; sourceTree = "<group>"; };
 		570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		570FCD9C24CC07E800E30B2F /* Notepad.ver2 */ = {
 			isa = PBXGroup;
 			children = (
+				570FCDBF24CC2F2300E30B2F /* Extension */,
 				570FCDB624CC182100E30B2F /* Model */,
 				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
 				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
@@ -82,6 +85,14 @@
 				570FCDB724CC1ADA00E30B2F /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		570FCDBF24CC2F2300E30B2F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */,
 				570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */,
 				570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */,
+				570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
