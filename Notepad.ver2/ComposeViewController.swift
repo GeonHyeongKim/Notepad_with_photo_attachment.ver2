@@ -29,8 +29,8 @@ class ComposeViewController: UIViewController {
         }
         
         // 메모가 입력되었을 경우
-        let newMemo = Note(content: memo)
-        Note.dummyNoteList.append(newMemo)
+//        let newMemo = Note(content: memo)
+//        Note.dummyNoteList.append(newMemo)
         
         NotificationCenter.default.post(name: ComposeViewController.newMomoDidInsert, object: nil)
         

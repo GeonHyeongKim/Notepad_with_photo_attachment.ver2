@@ -18,6 +18,7 @@
 		570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */; };
 		570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */; };
 		570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC224CC60AA00E30B2F /* DetailViewController.swift */; };
+		570FCDC624CC89EA00E30B2F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC524CC89EA00E30B2F /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		570FCDC224CC60AA00E30B2F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		570FCDC524CC89EA00E30B2F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		570FCD9C24CC07E800E30B2F /* Notepad.ver2 */ = {
 			isa = PBXGroup;
 			children = (
+				570FCDC424CC89C400E30B2F /* Data */,
 				570FCDBF24CC2F2300E30B2F /* Extension */,
 				570FCDB624CC182100E30B2F /* Model */,
 				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
@@ -96,6 +99,14 @@
 				570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		570FCDC424CC89C400E30B2F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				570FCDC524CC89EA00E30B2F /* DataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */,
 				570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */,
 				570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */,
+				570FCDC624CC89EA00E30B2F /* DataManager.swift in Sources */,
 				570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

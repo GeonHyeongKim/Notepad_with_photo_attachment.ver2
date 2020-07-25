@@ -8,17 +8,17 @@
 
 import Foundation
 
-class Note {
-    var content: String
-    var insertDate: Date
-    
-    init(content: String) {
-        self.content = content
-        self.insertDate = Date()
-    }
-    
-    static var dummyNoteList = [
-        Note(content: "Feedback content"),
-        Note(content: "TODO")
-    ]
-}
+//class Note {
+//    var content: String
+//    var insertDate: Date
+//
+//    init(content: String) {
+//        self.content = content
+//        self.insertDate = Date()
+//    }
+//
+//    static var dummyNoteList = [
+//        Note(content: "Feedback content"),
+//        Note(content: "TODO")
+//    ]
+//}

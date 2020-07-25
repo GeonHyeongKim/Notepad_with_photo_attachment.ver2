@@ -41,14 +41,15 @@ class NoteListTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        tableView.reloadData()
+        DataManager.shard.fetchNote()
+        tableView.reloadData()
     }
     
     // data 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
             if let vc = segue.destination as? DetailViewController {
-                vc.memo = Note.dummyNoteList[indexPath.row]
+                vc.memo = DataManager.shard.noteList[indexPath.row]
             }
         }
     }
@@ -62,16 +63,16 @@ class NoteListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Note.dummyNoteList.count
+        return DataManager.shard.noteList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteListTableViewCell", for: indexPath)
 
         // Configure the cell...
-        let target = Note.dummyNoteList[indexPath.row]
+        let target = DataManager.shard.noteList[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = formatter.string(from: target.insertDate)
+        cell.detailTextLabel?.text = formatter.string(for: target.insertDate)
         
         return cell
     }
