@@ -13,6 +13,7 @@
 		570FCDA824CC07E800E30B2F /* Notepad_ver2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDA624CC07E800E30B2F /* Notepad_ver2.xcdatamodeld */; };
 		570FCDAA24CC07E900E30B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDA924CC07E900E30B2F /* Assets.xcassets */; };
 		570FCDAD24CC07E900E30B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */; };
+		570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDB724CC1ADA00E30B2F /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		570FCDA924CC07E900E30B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		570FCDAC24CC07E900E30B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		570FCDAE24CC07E900E30B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		570FCDB724CC1ADA00E30B2F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		570FCD9C24CC07E800E30B2F /* Notepad.ver2 */ = {
 			isa = PBXGroup;
 			children = (
+				570FCDB624CC182100E30B2F /* Model */,
 				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
 				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
 				570FCDA324CC07E800E30B2F /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				570FCDA624CC07E800E30B2F /* Notepad_ver2.xcdatamodeld */,
 			);
 			path = Notepad.ver2;
+			sourceTree = "<group>";
+		};
+		570FCDB624CC182100E30B2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				570FCDB724CC1ADA00E30B2F /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				570FCD9E24CC07E800E30B2F /* AppDelegate.swift in Sources */,
 				570FCDA824CC07E800E30B2F /* Notepad_ver2.xcdatamodeld in Sources */,
 				570FCDA024CC07E800E30B2F /* SceneDelegate.swift in Sources */,
+				570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
