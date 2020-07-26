@@ -91,6 +91,7 @@ class ComposeViewController: UIViewController {
         // 메모가 입력되었을 경우
         if let tartget = editTarget { // 편집
             tartget.content = memo
+            tartget.insertDate = Date()
             DataManager.shared.saveContext()
             NotificationCenter.default.post(name: ComposeViewController.memoDidChange, object: nil)
         } else { // 새 메모
