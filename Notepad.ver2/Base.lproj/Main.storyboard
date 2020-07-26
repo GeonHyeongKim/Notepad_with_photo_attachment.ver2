@@ -63,11 +63,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdV-Ws-SZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="-27"/>
+            <point key="canvasLocation" x="734.78260869565224" y="-27.455357142857142"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="dvG-Ce-Rhj">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twc-Ls-CPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="eSu-ed-L1B" customClass="DetailViewController" customModule="Notepad_ver2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4s1-o3-qsH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -120,7 +121,7 @@
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-hn-PEY">
-                                <rect key="frame" x="-8" y="685" width="60" height="49"/>
+                                <rect key="frame" x="-8" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="cSB-GN-7GY">
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -129,6 +130,12 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vI0-R4-L2N"/>
+                                    <barButtonItem systemItem="camera" id="Yiu-y9-TYd">
+                                        <connections>
+                                            <action selector="insertImage:" destination="eSu-ed-L1B" id="RUO-7r-WVA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T5l-mH-ofh"/>
                                     <barButtonItem systemItem="compose" id="dEe-Lf-5Nl">
                                         <connections>
                                             <segue destination="RkQ-vk-WOi" kind="presentation" id="eYP-Rc-dTI"/>
@@ -160,7 +167,6 @@
                         <outlet property="tvMemo" destination="A8o-VU-8g6" id="d9Z-mw-HwH"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="twc-Ls-CPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8115942028987" y="264.50892857142856"/>
         </scene>

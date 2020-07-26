@@ -70,11 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				570FCDC724CCB6A600E30B2F /* Notepad.ver2.entitlements */,
+				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
+				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
 				570FCDC424CC89C400E30B2F /* Data */,
 				570FCDBF24CC2F2300E30B2F /* Extension */,
 				570FCDB624CC182100E30B2F /* Model */,
-				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
-				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
 				570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */,
 				570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */,
 				570FCDC224CC60AA00E30B2F /* DetailViewController.swift */,
