@@ -68,7 +68,6 @@
         <!--Detail View Controller-->
         <scene sceneID="dvG-Ce-Rhj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="twc-Ls-CPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="eSu-ed-L1B" customClass="DetailViewController" customModule="Notepad_ver2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4s1-o3-qsH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -130,12 +129,6 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vI0-R4-L2N"/>
-                                    <barButtonItem systemItem="camera" id="Yiu-y9-TYd">
-                                        <connections>
-                                            <action selector="insertImage:" destination="eSu-ed-L1B" id="RUO-7r-WVA"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T5l-mH-ofh"/>
                                     <barButtonItem systemItem="compose" id="dEe-Lf-5Nl">
                                         <connections>
                                             <segue destination="RkQ-vk-WOi" kind="presentation" id="eYP-Rc-dTI"/>
@@ -167,6 +160,7 @@
                         <outlet property="tvMemo" destination="A8o-VU-8g6" id="d9Z-mw-HwH"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twc-Ls-CPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8115942028987" y="264.50892857142856"/>
         </scene>
@@ -186,13 +180,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fge-ad-rI6">
+                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9cX-lO-iKU"/>
+                                    <barButtonItem systemItem="camera" id="KPd-9a-kPg">
+                                        <connections>
+                                            <action selector="insertImage" destination="Gg1-J8-ig3" id="9MN-36-8L8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XVZ-40-mUK"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2te-vJ-xhm" firstAttribute="trailing" secondItem="jug-hu-Qze" secondAttribute="trailing" id="8PN-2X-5Ny"/>
-                            <constraint firstAttribute="bottom" secondItem="2te-vJ-xhm" secondAttribute="bottom" id="Imi-vq-j7q"/>
-                            <constraint firstItem="2te-vJ-xhm" firstAttribute="leading" secondItem="jug-hu-Qze" secondAttribute="leading" id="Th9-LI-eZ8"/>
-                            <constraint firstItem="2te-vJ-xhm" firstAttribute="top" secondItem="OX6-aL-J6S" secondAttribute="top" id="yEx-bv-Z8N"/>
+                            <constraint firstItem="2te-vJ-xhm" firstAttribute="top" secondItem="OX6-aL-J6S" secondAttribute="top" id="D2j-eV-adv"/>
+                            <constraint firstItem="2te-vJ-xhm" firstAttribute="trailing" secondItem="jug-hu-Qze" secondAttribute="trailing" id="Yb2-6I-oWk"/>
+                            <constraint firstItem="2te-vJ-xhm" firstAttribute="leading" secondItem="jug-hu-Qze" secondAttribute="leading" id="iMU-wQ-qHq"/>
+                            <constraint firstAttribute="bottom" secondItem="2te-vJ-xhm" secondAttribute="bottom" id="kVZ-vS-txD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jug-hu-Qze"/>
                     </view>
@@ -209,12 +216,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="toolbar" destination="fge-ad-rI6" id="Hb1-vd-f6h"/>
                         <outlet property="tvMemo" destination="2te-vJ-xhm" id="HV9-pr-hKi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENo-tJ-OGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3096" y="-443"/>
+            <point key="canvasLocation" x="3095.6521739130435" y="-443.30357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7se-nD-xSa">
@@ -252,7 +260,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eYP-Rc-dTI"/>
+        <segue reference="5d6-Ia-g80"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>

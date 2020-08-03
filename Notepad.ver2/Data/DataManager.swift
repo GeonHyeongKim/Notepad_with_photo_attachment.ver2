@@ -13,7 +13,6 @@ class DataManager {
     static let shared = DataManager()
     private init() {
         
-        
     }
     
     // Context : Core Data를 관리
@@ -54,6 +53,11 @@ class DataManager {
             mainContext.delete(memo)
             saveContext()
         }
+    }
+    
+    // 이미지 저장
+    func saveImage(_ imageData: Data) {
+        
     }
     
     // MARK: - Core Data stack

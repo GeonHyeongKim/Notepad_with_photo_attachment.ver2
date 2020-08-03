@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class ComposeViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class ComposeViewController: UIViewController {
     var originalMemoContent: String?
     
     @IBOutlet weak var tvMemo: UITextView!
+    @IBOutlet weak var toolbar: UIToolbar!
     
     var willShowToken: NSObjectProtocol?
     var willHideToken: NSObjectProtocol?
@@ -41,16 +43,18 @@ class ComposeViewController: UIViewController {
         }
         
         tvMemo.delegate = self
-        
+        tvMemo.inputAccessoryView = toolbar
+
         // 키보드 노티피케이션
         willShowToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
-            guard let strongSelf = self else { return }
+            guard let strongSelf = self, let toolbar = self?.toolbar else { return }
             
             if let frame = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let hight = frame.cgRectValue.height
                 
                 var inset = strongSelf.tvMemo.contentInset
                 inset.bottom = hight
+                inset.top = toolbar.frame.height
                 strongSelf.tvMemo.contentInset = inset
             }
         })
@@ -63,6 +67,7 @@ class ComposeViewController: UIViewController {
             
             inset = strongSelf.tvMemo.scrollIndicatorInsets
             inset.bottom = 0
+            inset.top = 0
             strongSelf.tvMemo.scrollIndicatorInsets = inset
         })
     }
@@ -101,19 +106,96 @@ class ComposeViewController: UIViewController {
 //        let newMemo = Note(content: memo)
 //        Note.dummyNoteList.append(newMemo)
         
-        
         dismiss(animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Camera
+    @IBAction func insertImage() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // 옵션 초기화
+        let libraryAction = UIAlertAction(title: "엘범", style: .default) { [weak self] (alert) in
+            self!.checkPhotoLibraryAuthorizationStatus()
+        }
+        
+        let cameraAction = UIAlertAction(title: "새로운 촬영", style: .default, handler: {
+            [weak self] (alert: UIAlertAction!) -> Void in
+            self!.checkCameraAuthorizationStatus()
+        })
+        //        let linkAction = UIAlertAction(title: "외부 링크 이미지", style: .default, handler: {
+        //            [weak self] (alert: UIAlertAction!) -> Void in
+        //            self.presentAlert(title: "URL 입력", message: "")
+        //        })
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(libraryAction)
+        alert.addAction(cameraAction)
+        //        alert.addAction(linkAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
-    */
+    
+    // photo library 권한 확인
+    private func checkPhotoLibraryAuthorizationStatus(){
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status {
+            case .authorized:
+                DispatchQueue.main.async { () -> Void in self.openLibraryAndCamera(.photoLibrary) }
+            case .denied, .restricted:
+                self.settingAlert(title: "사진 보관함에 접근 불가", message: "사진 보관함에 접근할 수 있도록, 앱 개인 정보 설정으로 이동하여 접근 허용해 주세요.")
+            case .notDetermined:
+                PHPhotoLibrary.requestAuthorization() { status in
+                    guard status == .authorized else { return }
+                    self.openLibraryAndCamera(.photoLibrary)
+                }
+            @unknown default:
+                print("Photo Library Authorization Status에서 에러발생")
+            }
+        }
+    }
+    
+    // camera 권한 확인
+    private func checkCameraAuthorizationStatus(){
+        let authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        switch authorizationStatus {
+        case .authorized:
+            DispatchQueue.main.async { () -> Void in self.openLibraryAndCamera(.camera) }
+        case .denied, .restricted:
+            self.settingAlert(title: "카메라에 접근 불가", message: "카메라에 접근할 수 있도록, 앱 개인 정보 설정으로 이동하여 접근 허용해 주세요.")
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted) in
+                if granted { DispatchQueue.main.async { self!.openLibraryAndCamera(.camera) } }
+            }
+        @unknown default:
+            print("Camera Authorization Status에서 에러발생")
+        }
+    }
+    
+    // 엘범 열기 & 새로운 촬영
+    func openLibraryAndCamera(_ sender: UIImagePickerController.SourceType){
+        let imgaePicker = UIImagePickerController()
+        imgaePicker.sourceType = sender
+        imgaePicker.allowsEditing = true
+        imgaePicker.delegate = self
+        present(imgaePicker, animated: true)
+    }
+    
+    // 권한 설정 알림 - photo library, camera
+    private func settingAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let settingAction = UIAlertAction(title: "승인", style: .default){ (action) in // 다시 설정에서 허용할 수 있도록
+                if let settingsUrl = NSURL(string:UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(settingsUrl as URL, options: [:], completionHandler: nil)
+                }
+            }
+            let cancleAction = UIAlertAction(title: "허용 안함", style: .destructive, handler: nil)
+            alert.addAction(cancleAction)
+            alert.addAction(settingAction)
+            self.present(alert, animated:true, completion:nil)
+        }
+    }
 
 }
 
@@ -150,6 +232,18 @@ extension ComposeViewController: UIAdaptivePresentationControllerDelegate {
         present(alert, animated: true, completion: nil)
     }
 }
+
+// MARK: - UIImagePickerController Delegate
+extension ComposeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let userPickedImage = info[.editedImage] as? UIImage else { return }
+        
+        DataManager.shared.saveImage(userPickedImage.pngData()!)
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 
 //MARK: - 새 메모가 발생시 List update
 extension ComposeViewController {
