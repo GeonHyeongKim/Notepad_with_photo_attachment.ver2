@@ -32,7 +32,7 @@ class ComposeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                    
+        
         if let memo = editTarget {
             navigationItem.title = "메모 편집"
             tvMemo.text = memo.content
@@ -47,14 +47,13 @@ class ComposeViewController: UIViewController {
 
         // 키보드 노티피케이션
         willShowToken = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in
-            guard let strongSelf = self, let toolbar = self?.toolbar else { return }
+            guard let strongSelf = self else { return }
             
             if let frame = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let hight = frame.cgRectValue.height
                 
                 var inset = strongSelf.tvMemo.contentInset
                 inset.bottom = hight
-                inset.top = toolbar.frame.height
                 strongSelf.tvMemo.contentInset = inset
             }
         })
@@ -113,7 +112,7 @@ class ComposeViewController: UIViewController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // 옵션 초기화
-        let libraryAction = UIAlertAction(title: "엘범", style: .default) { [weak self] (alert) in
+        let libraryAction = UIAlertAction(title: "앨범", style: .default) { [weak self] (alert) in
             self!.checkPhotoLibraryAuthorizationStatus()
         }
         
@@ -237,10 +236,24 @@ extension ComposeViewController: UIAdaptivePresentationControllerDelegate {
 extension ComposeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let userPickedImage = info[.editedImage] as? UIImage else { return }
-        
-        DataManager.shared.saveImage(userPickedImage.pngData()!)
-        
+//        DataManager.shared.saveImage(editTarget ,userPickedImage.pngData()!)
+        attachment(userPickedImage, ratio: 2)
         dismiss(animated: true, completion: nil)
+    }
+    
+    func attachment(_ image: UIImage, ratio: CGFloat) {
+        let textAttachment = NSTextAttachment()
+        textAttachment.image = image
+        
+        let newImageWidth = (tvMemo.bounds.size.width/ratio)
+        let scale = newImageWidth/image.size.width
+        let newImageHeight = image.size.height * scale
+        
+        //resize this
+        textAttachment.bounds = CGRect.init(x: 0, y: 0, width: newImageWidth, height: newImageHeight)
+
+        let attString = NSAttributedString(attachment: textAttachment)
+        tvMemo.textStorage.insert(attString, at: tvMemo.selectedRange.location)
     }
 }
 

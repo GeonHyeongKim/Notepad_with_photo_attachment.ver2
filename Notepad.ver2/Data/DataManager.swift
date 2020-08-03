@@ -41,6 +41,7 @@ class DataManager {
         
         newMemo.content = memo
         newMemo.insertDate = Date()
+//        newMemo.insertImages = images.
         
         // table reload
         noteList.insert(newMemo, at: 0) // 가장 처음에 입력
@@ -54,11 +55,14 @@ class DataManager {
             saveContext()
         }
     }
-    
-    // 이미지 저장
-    func saveImage(_ imageData: Data) {
-        
-    }
+//
+//    // 이미지 저장
+//    func saveImage(_ memo: Note?, _ imageData: Data) {
+//        if let memo = memo {
+//            memo.image = imageData
+//            saveContext()
+//        }
+//    }
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {

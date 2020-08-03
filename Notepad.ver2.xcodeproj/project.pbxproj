@@ -10,7 +10,6 @@
 		570FCD9E24CC07E800E30B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCD9D24CC07E800E30B2F /* AppDelegate.swift */; };
 		570FCDA024CC07E800E30B2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */; };
 		570FCDA524CC07E800E30B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDA324CC07E800E30B2F /* Main.storyboard */; };
-		570FCDA824CC07E800E30B2F /* Notepad_ver2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDA624CC07E800E30B2F /* Notepad_ver2.xcdatamodeld */; };
 		570FCDAA24CC07E900E30B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDA924CC07E900E30B2F /* Assets.xcassets */; };
 		570FCDAD24CC07E900E30B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */; };
 		570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDB724CC1ADA00E30B2F /* Model.swift */; };
@@ -19,6 +18,7 @@
 		570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */; };
 		570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC224CC60AA00E30B2F /* DetailViewController.swift */; };
 		570FCDC624CC89EA00E30B2F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC524CC89EA00E30B2F /* DataManager.swift */; };
+		570FCDDA24D8093500E30B2F /* Notepad_ver2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDD824D8093500E30B2F /* Notepad_ver2.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,6 @@
 		570FCD9D24CC07E800E30B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		570FCDA424CC07E800E30B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		570FCDA724CC07E800E30B2F /* Notepad_ver2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notepad_ver2.xcdatamodel; sourceTree = "<group>"; };
 		570FCDA924CC07E900E30B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		570FCDAC24CC07E900E30B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		570FCDAE24CC07E900E30B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 		570FCDC224CC60AA00E30B2F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		570FCDC524CC89EA00E30B2F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		570FCDC724CCB6A600E30B2F /* Notepad.ver2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notepad.ver2.entitlements; sourceTree = "<group>"; };
+		570FCDD924D8093500E30B2F /* Notepad_ver2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notepad_ver2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +80,9 @@
 				570FCDC224CC60AA00E30B2F /* DetailViewController.swift */,
 				570FCDA324CC07E800E30B2F /* Main.storyboard */,
 				570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */,
+				570FCDD824D8093500E30B2F /* Notepad_ver2.xcdatamodeld */,
 				570FCDA924CC07E900E30B2F /* Assets.xcassets */,
 				570FCDAE24CC07E900E30B2F /* Info.plist */,
-				570FCDA624CC07E800E30B2F /* Notepad_ver2.xcdatamodeld */,
 			);
 			path = Notepad.ver2;
 			sourceTree = "<group>";
@@ -183,11 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				570FCD9E24CC07E800E30B2F /* AppDelegate.swift in Sources */,
-				570FCDA824CC07E800E30B2F /* Notepad_ver2.xcdatamodeld in Sources */,
 				570FCDA024CC07E800E30B2F /* SceneDelegate.swift in Sources */,
 				570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */,
 				570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */,
 				570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */,
+				570FCDDA24D8093500E30B2F /* Notepad_ver2.xcdatamodeld in Sources */,
 				570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */,
 				570FCDC624CC89EA00E30B2F /* DataManager.swift in Sources */,
 				570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */,
@@ -396,12 +396,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		570FCDA624CC07E800E30B2F /* Notepad_ver2.xcdatamodeld */ = {
+		570FCDD824D8093500E30B2F /* Notepad_ver2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				570FCDA724CC07E800E30B2F /* Notepad_ver2.xcdatamodel */,
+				570FCDD924D8093500E30B2F /* Notepad_ver2.xcdatamodel */,
 			);
-			currentVersion = 570FCDA724CC07E800E30B2F /* Notepad_ver2.xcdatamodel */;
+			currentVersion = 570FCDD924D8093500E30B2F /* Notepad_ver2.xcdatamodel */;
 			path = Notepad_ver2.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -74,8 +74,12 @@ class NoteListTableViewController: UITableViewController {
         cell.textLabel?.text = target.content
         cell.detailTextLabel?.text = formatter.string(for: target.insertDate)
         
+        DispatchQueue.main.async(execute: {
+//            cell.ThumnailImage(indexPath.row)
+        })
+        
         if #available(iOS 11.0, *) {
-            cell.detailTextLabel?.textColor = UIColor(named: "MyLableColor")
+//            cell.detailTextLabel?.textColor = UIColor(named: "MyLableColor")
         } else {
             cell.detailTextLabel?.textColor = UIColor.lightGray
         }
