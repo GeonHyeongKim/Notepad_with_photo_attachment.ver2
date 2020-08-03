@@ -235,24 +235,27 @@ extension ComposeViewController: UIAdaptivePresentationControllerDelegate {
 // MARK: - UIImagePickerController Delegate
 extension ComposeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let userPickedImage = info[.editedImage] as? UIImage else { return }
-//        DataManager.shared.saveImage(editTarget ,userPickedImage.pngData()!)
-        attachment(userPickedImage, ratio: 2)
+        guard let image = info[.editedImage] as? UIImage,
+            
+            // scale the image to fit the textView frame
+            let scaledImage = image.resized(toWidth: self.tvMemo.frame.size.width/2)
+        
+            // encode the image in base64
+//            let encodedImageString = scaledImage.pngData()?.base64EncodedString(),
+            
+            // create an attributed string by embedding the encoded image in HTML
+//            let attributedString = NSAttributedString(s)
+            else {
+                return
+        }
+        
+        attachment(scaledImage)
         dismiss(animated: true, completion: nil)
     }
     
-    func attachment(_ image: UIImage, ratio: CGFloat) {
-        let textAttachment = NSTextAttachment()
-        textAttachment.image = image
-        
-        let newImageWidth = (tvMemo.bounds.size.width/ratio)
-        let scale = newImageWidth/image.size.width
-        let newImageHeight = image.size.height * scale
-        
-        //resize this
-        textAttachment.bounds = CGRect.init(x: 0, y: 0, width: newImageWidth, height: newImageHeight)
-
-        let attString = NSAttributedString(attachment: textAttachment)
+    func attachment(_ image: UIImage) {
+        let attachment = NSTextAttachment().textAttachment(image)
+        let attString = NSAttributedString(attachment: attachment)
         tvMemo.textStorage.insert(attString, at: tvMemo.selectedRange.location)
     }
 }

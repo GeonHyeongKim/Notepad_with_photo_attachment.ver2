@@ -19,6 +19,10 @@
 		570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC224CC60AA00E30B2F /* DetailViewController.swift */; };
 		570FCDC624CC89EA00E30B2F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDC524CC89EA00E30B2F /* DataManager.swift */; };
 		570FCDDA24D8093500E30B2F /* Notepad_ver2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDD824D8093500E30B2F /* Notepad_ver2.xcdatamodeld */; };
+		570FCDE024D80A1800E30B2F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDDF24D80A1800E30B2F /* UIImage.swift */; };
+		570FCDE224D80E2000E30B2F /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDE124D80E2000E30B2F /* NSData.swift */; };
+		570FCDE424D813CF00E30B2F /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDE324D813CF00E30B2F /* NSAttributedString.swift */; };
+		570FCDE624D81E0D00E30B2F /* NSTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDE524D81E0D00E30B2F /* NSTextAttachment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		570FCDC524CC89EA00E30B2F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		570FCDC724CCB6A600E30B2F /* Notepad.ver2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notepad.ver2.entitlements; sourceTree = "<group>"; };
 		570FCDD924D8093500E30B2F /* Notepad_ver2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notepad_ver2.xcdatamodel; sourceTree = "<group>"; };
+		570FCDDF24D80A1800E30B2F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		570FCDE124D80E2000E30B2F /* NSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
+		570FCDE324D813CF00E30B2F /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
+		570FCDE524D81E0D00E30B2F /* NSTextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextAttachment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				570FCDC024CC2F4700E30B2F /* UIViewController+Alert.swift */,
+				570FCDDF24D80A1800E30B2F /* UIImage.swift */,
+				570FCDE524D81E0D00E30B2F /* NSTextAttachment.swift */,
+				570FCDE124D80E2000E30B2F /* NSData.swift */,
+				570FCDE324D813CF00E30B2F /* NSAttributedString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -183,10 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				570FCD9E24CC07E800E30B2F /* AppDelegate.swift in Sources */,
+				570FCDE224D80E2000E30B2F /* NSData.swift in Sources */,
+				570FCDE624D81E0D00E30B2F /* NSTextAttachment.swift in Sources */,
+				570FCDE024D80A1800E30B2F /* UIImage.swift in Sources */,
 				570FCDA024CC07E800E30B2F /* SceneDelegate.swift in Sources */,
 				570FCDBE24CC2BF200E30B2F /* ComposeViewController.swift in Sources */,
 				570FCDBA24CC1DA900E30B2F /* NoteListTableViewController.swift in Sources */,
 				570FCDB824CC1ADA00E30B2F /* Model.swift in Sources */,
+				570FCDE424D813CF00E30B2F /* NSAttributedString.swift in Sources */,
 				570FCDDA24D8093500E30B2F /* Notepad_ver2.xcdatamodeld in Sources */,
 				570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */,
 				570FCDC624CC89EA00E30B2F /* DataManager.swift in Sources */,
