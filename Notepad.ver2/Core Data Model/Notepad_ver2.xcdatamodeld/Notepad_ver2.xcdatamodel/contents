@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="InsertImage" representedClassName="InsertImage" syncable="YES" codeGenerationType="class">
-        <attribute name="content" optional="YES" attributeType="String"/>
-        <attribute name="insertDate" optional="YES" attributeType="Date" allowsExternalBinaryDataStorage="YES" usesScalarValueType="NO"/>
-    </entity>
+    <entity name="InsertImage" representedClassName="InsertImage" syncable="YES" codeGenerationType="class"/>
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Note" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="InsertImage" positionX="-54" positionY="18" width="128" height="73"/>
+        <element name="InsertImage" positionX="-54" positionY="18" width="128" height="43"/>
     </elements>
 </model>

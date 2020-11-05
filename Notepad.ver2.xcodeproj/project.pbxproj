@@ -23,6 +23,7 @@
 		570FCDE224D80E2000E30B2F /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDE124D80E2000E30B2F /* NSData.swift */; };
 		570FCDE424D813CF00E30B2F /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDE324D813CF00E30B2F /* NSAttributedString.swift */; };
 		570FCDE624D81E0D00E30B2F /* NSTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDE524D81E0D00E30B2F /* NSTextAttachment.swift */; };
+		570FCDEB24D84C4700E30B2F /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FCDEA24D84C4700E30B2F /* NoteListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		570FCDE124D80E2000E30B2F /* NSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSData.swift; sourceTree = "<group>"; };
 		570FCDE324D813CF00E30B2F /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		570FCDE524D81E0D00E30B2F /* NSTextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextAttachment.swift; sourceTree = "<group>"; };
+		570FCDEA24D84C4700E30B2F /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +82,16 @@
 				570FCDC724CCB6A600E30B2F /* Notepad.ver2.entitlements */,
 				570FCD9F24CC07E800E30B2F /* SceneDelegate.swift */,
 				570FCD9D24CC07E800E30B2F /* AppDelegate.swift */,
+				570FCDE724D8363C00E30B2F /* Core Data Model */,
 				570FCDC424CC89C400E30B2F /* Data */,
 				570FCDBF24CC2F2300E30B2F /* Extension */,
 				570FCDB624CC182100E30B2F /* Model */,
+				570FCDE924D84C1100E30B2F /* TableView Cell */,
 				570FCDBD24CC2BF200E30B2F /* ComposeViewController.swift */,
 				570FCDB924CC1DA900E30B2F /* NoteListTableViewController.swift */,
 				570FCDC224CC60AA00E30B2F /* DetailViewController.swift */,
 				570FCDA324CC07E800E30B2F /* Main.storyboard */,
 				570FCDAB24CC07E900E30B2F /* LaunchScreen.storyboard */,
-				570FCDD824D8093500E30B2F /* Notepad_ver2.xcdatamodeld */,
 				570FCDA924CC07E900E30B2F /* Assets.xcassets */,
 				570FCDAE24CC07E900E30B2F /* Info.plist */,
 			);
@@ -121,6 +124,22 @@
 				570FCDC524CC89EA00E30B2F /* DataManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		570FCDE724D8363C00E30B2F /* Core Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				570FCDD824D8093500E30B2F /* Notepad_ver2.xcdatamodeld */,
+			);
+			path = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		570FCDE924D84C1100E30B2F /* TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				570FCDEA24D84C4700E30B2F /* NoteListTableViewCell.swift */,
+			);
+			path = "TableView Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +224,7 @@
 				570FCDE424D813CF00E30B2F /* NSAttributedString.swift in Sources */,
 				570FCDDA24D8093500E30B2F /* Notepad_ver2.xcdatamodeld in Sources */,
 				570FCDC124CC2F4700E30B2F /* UIViewController+Alert.swift in Sources */,
+				570FCDEB24D84C4700E30B2F /* NoteListTableViewCell.swift in Sources */,
 				570FCDC624CC89EA00E30B2F /* DataManager.swift in Sources */,
 				570FCDC324CC60AA00E30B2F /* DetailViewController.swift in Sources */,
 			);

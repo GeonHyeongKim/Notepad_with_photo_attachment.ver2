@@ -67,21 +67,18 @@ class NoteListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "noteListTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noteListTableViewCell", for: indexPath) as! NoteListTableViewCell
         
         // Configure the cell...
         let target = DataManager.shared.noteList[indexPath.row]
-        cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = formatter.string(for: target.insertDate)
-        
-        DispatchQueue.main.async(execute: {
-//            cell.ThumnailImage(indexPath.row)
-        })
+        cell.lblTitle.text = target.title
+        cell.lblContent.text = target.content
+        cell.lblDate.text = formatter.string(for: target.insertDate)
         
         if #available(iOS 11.0, *) {
-//            cell.detailTextLabel?.textColor = UIColor(named: "MyLableColor")
+//            cell.lblDate?.textColor = UIColor(named: "MyLableColor")
         } else {
-            cell.detailTextLabel?.textColor = UIColor.lightGray
+            cell.lblDate?.textColor = UIColor.lightGray
         }
         
         return cell

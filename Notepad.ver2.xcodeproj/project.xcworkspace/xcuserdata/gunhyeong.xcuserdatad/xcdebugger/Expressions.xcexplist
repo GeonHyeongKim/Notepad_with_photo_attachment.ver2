@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "NoteListTableViewController.tableView(_:cellForRowAt:):NoteListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "target.content">
+            </PersistentString>
+            <PersistentString
+               value = "target.insertDate">
+            </PersistentString>
+            <PersistentString
+               value = "target.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
