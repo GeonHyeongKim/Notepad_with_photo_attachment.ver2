@@ -253,6 +253,7 @@
                     <connections>
                         <outlet property="toolbar" destination="fge-ad-rI6" id="Hb1-vd-f6h"/>
                         <outlet property="tvMemo" destination="2te-vJ-xhm" id="HV9-pr-hKi"/>
+                        <segue destination="x23-qn-Czg" kind="show" id="YlF-pZ-yfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENo-tJ-OGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -271,6 +272,22 @@
                 </toolbar>
             </objects>
             <point key="canvasLocation" x="3095.6521739130435" y="-443.30357142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pZV-uO-daU">
+            <objects>
+                <viewController id="x23-qn-Czg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kjq-ri-hAL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Zvz-Qh-UCg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GSt-7P-Qlx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3OW-QA-POc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3928" y="-443"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7se-nD-xSa">
